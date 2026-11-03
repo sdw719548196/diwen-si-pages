@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A compact self-stabilising Mecanum ballbot, and what a family of 672 simulated ballbots must provide to share one control design.">
+  <title>Mecanum Ballbot | Diwen Si</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="A Compact Mecanum Ballbot: from Wheel Geometry to Control">
+  <meta property="og:description" content="Wheel geometry, hardware validation, and one control design across a family of 672 simulated bodies.">
+  <meta property="og:image" content="https://sdw719548196.github.io/diwen-si-pages/assets/og-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <h1>A Compact Mecanum Ballbot</h1>
+      <p class="subtitle">What a family of ballbots must provide to share one control design</p>
+      <p class="author"><a href="../">Diwen Si</a></p>
+      <p class="affil">School of Engineering, Newcastle University · PhD research</p>
+      <nav class="buttons">
+        <a class="btn" href="#videos">Videos</a>
+        <a class="btn" href="../assets/Diwen_Si_CV.pdf">CV</a>
+        <a class="btn" href="#manuscripts">Manuscripts</a>
+        <a class="btn" href="mailto:d.si2@ncl.ac.uk">d.si2@ncl.ac.uk</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap teaser">
+      <video src="../assets/video/sim_real_pair.mp4" poster="../assets/video/sim_real_pair.jpg" muted loop playsinline preload="metadata" data-autoplay></video>
+      <p class="caption">The MK5 prototype on carpet, beside a body from its simulated family in MuJoCo.</p>
+    </section>
+
+    <section class="wrap narrow">
+      <h2>Overview</h2>
+      <p>Ballbots move in any direction, but their design trades off stability, transmission and construction. This work develops a compact, self-stabilising ballbot with three Mecanum wheels, built for future multi-robot use, and asks what a family of similar ballbots must provide to share one control design.</p>
+      <p>A symbolic, generalised kinematic model covers wheel counts, positions and roller angles. It describes how motor speed and torque reach the ball, supports balanced and task-specific layouts within motor limits, and shows which installation errors matter most, so that a ballbot's handling becomes measurable. Five builds led to the prototype MK5; on it, a separate tilt-correction map returned the robot upright in 18 of 18 matched trials, against 3 of 18 for a shared map.</p>
+      <p>Controllers were learned in Webots and then MuJoCo. On a family of 672 simulated bodies, one analytic controller closed 69% of the gap between doing nothing and perfect tracking on 224 evaluation bodies when each body supplied its transmission map, against 18% with a nominal map. Each robot of such a family needs to supply only the map computed from its design angles; transfer to hardware is the next step.</p>
+    </section>
+
+    <section class="wrap stats" aria-label="Selected numbers">
+      <div><strong>5</strong><span>builds leading to the MK5 prototype</span></div>
+      <div><strong>18 / 18</strong><span>upright recoveries on MK5, against 3 / 18</span></div>
+      <div><strong>672</strong><span>simulated bodies in the MuJoCo family</span></div>
+      <div><strong>69% vs 18%</strong><span>of the tracking gap closed on 224 evaluation bodies: own map vs nominal map</span></div>
+    </section>
+
+    <section id="videos" class="wrap">
+      <h2 class="center">The robot</h2>
+      <div class="grid one">
+        <figure>
+          <video src="../assets/video/real_mk5_carpet.mp4" poster="../assets/video/real_mk5_carpet.jpg" muted loop playsinline preload="none" data-autoplay></video>
+          <figcaption><strong>MK5 on carpet.</strong> Three Mecanum drive units, IMU, encoders, motor-current sensing and on-board computation, with AprilTags for external pose.</figcaption>
+        </figure>
+        <figure>
+          <video src="../assets/video/real_trials_8x.mp4" poster="../assets/video/real_trials_8x.jpg" muted loop playsinline preload="none" data-autoplay></video>
+          <figcaption><strong>Matched trials on MK5, 8× speed.</strong> A separate tilt-correction map returned the robot upright in 18 of 18 matched trials, against 3 of 18 for a shared map.</figcaption>
+        </figure>
+      </div>
+
+      <h2 class="center">Five builds</h2>
+      <div class="builds">
+        <figure><img src="../assets/img/mk1.jpg" alt="MK1, a miniaturisation prototype built around a size 7 basketball" loading="lazy"><figcaption><strong>MK1.</strong> Built around a size 7 basketball; set the size bound.</figcaption></figure>
+        <figure><img src="../assets/img/mk2.jpg" alt="MK2, the first optimised Mecanum prototype" loading="lazy"><figcaption><strong>MK2.</strong> First optimised Mecanum prototype.</figcaption></figure>
+        <figure><img src="../assets/img/mk3.jpg" alt="MK3 prototype, side view" loading="lazy"><figcaption><strong>MK3.</strong> Frame and ball printed in PETG.</figcaption></figure>
+        <figure><img src="../assets/img/mk4.jpg" alt="MK4 prototype with electronics, side view" loading="lazy"><figcaption><strong>MK4.</strong> First data acquisition and wireless communication.</figcaption></figure>
+        <figure><img src="../assets/img/mk5_close.jpg" alt="MK5, the final prototype, on carpet" loading="lazy"><figcaption><strong>MK5.</strong> One-piece PLA and TPU ball; the platform for the experiments.</figcaption></figure>
+      </div>
+      
+      <h2 class="center">The build</h2>
+      <p class="narrow-text">MK5 combines several manufacturing processes. The motor holders are laser-cut from acrylic and bent over 3D-printed moulds to set the wheel elevation; the wheel azimuths are set by the holes of a stainless-steel ring; the drive ball is printed in one piece, with a PLA inner layer for stiffness and a TPU 90A outer layer for friction. The aim is that the built robot keeps the geometry the controllers assume. The assembled robot weighs 4.99 kg, against almost 9 kg for MK1, and is about 300 mm across, so two robots side by side fit a 762 mm doorway.</p>
+      <div class="build-pair">
+        <figure><img src="../assets/img/build/mk5_top_labelled.jpg" alt="Labelled top view of MK5" loading="lazy">
+          <figcaption><strong>MK5 from above.</strong> 1 drive ball; 2&ndash;4 Mecanum wheel modules, each with an EC 45 flat motor in a bent acrylic support; 5 Raspberry Pi 5; 6 step-down converter; 7 IM10A IMU; 8 Arduino UNO R4 WiFi; 9 ESCON motherboard beneath each motor; 10 Pixy2 camera; 11 power lead; 12 wheel-balancing weights.</figcaption></figure>
+        <figure class="diagram"><img src="../assets/img/build/mk5_system.png" alt="Block diagram of MK5 components, signal links and power supply" loading="lazy">
+          <figcaption><strong>Components, signal links and power.</strong> The Raspberry Pi runs the 40 Hz control loop; the Arduino passes its commands to three Maxon ESCON 50/5 drives, which close the motor-speed loop on 1024-count encoders; each EC 45 flat motor drives its wheel directly, with no gearbox.</figcaption></figure>
+      </div>
+      <div class="make-strip">
+        <figure><img src="../assets/img/build/m1_blank.jpg" alt="Laser-cut acrylic motor-holder blank" loading="lazy"><figcaption>Laser-cut blank</figcaption></figure>
+        <figure><img src="../assets/img/build/m2_mould.jpg" alt="Acrylic holder on the 3D-printed bending mould" loading="lazy"><figcaption>On the bending mould</figcaption></figure>
+        <figure><img src="../assets/img/build/m3_bent.jpg" alt="Three bent acrylic motor holders" loading="lazy"><figcaption>After bending</figcaption></figure>
+        <figure><img src="../assets/img/build/m4_module.jpg" alt="Wheel-module assembly trial" loading="lazy"><figcaption>Module assembly trial</figcaption></figure>
+        <figure><img src="../assets/img/build/m5_ball.jpg" alt="Printed PLA and TPU drive ball trial" loading="lazy"><figcaption>Ball-printing trial</figcaption></figure>
+      </div>
+
+      <h2 class="center">The model</h2>
+      <div class="model">
+        <figure><img src="../assets/img/geometry.png" alt="Side and top views of a ball with three wheels: contact elevation theta and azimuth phi for each wheel" loading="lazy"></figure>
+        <figure><img src="../assets/img/model.png" alt="Three Mecanum wheels with passive rollers pressing on the ball" loading="lazy"></figure>
+      </div>
+      <p class="caption">Each wheel is placed by its azimuth φ and contact elevation θ and carries rollers at angle γ. The symbolic model maps motor speeds and torques through these angles to the motion of the ball, for any number of wheels.</p>
+
+      <h2 class="center">Choosing the geometry</h2>
+      <div class="grid two">
+        <figure>
+          <video src="../assets/video/sim_library_turntable.mp4" poster="../assets/video/sim_library_turntable.jpg" muted loop playsinline preload="none" data-autoplay></video>
+          <figcaption><strong>A family of bodies.</strong> Twelve of the 672 simulated ballbots: same chassis and ball, different wheel positions and roller angles.</figcaption>
+        </figure>
+        <figure>
+          <video src="../assets/video/sim_webots_wheel_benchmark.mp4" poster="../assets/video/sim_webots_wheel_benchmark.jpg" muted loop playsinline preload="none" data-autoplay></video>
+          <figcaption><strong>Choosing the wheel.</strong> Mecanum against three omniwheel constructions in Webots. With the same motor limit the omniwheels run faster; at matched motion Mecanum needs less torque.</figcaption>
+        </figure>
+      </div>
+
+      <h2 class="center">One control design, many bodies</h2>
+      <div class="grid one">
+        <figure>
+          <video src="../assets/video/sim_family_one_controller.mp4" poster="../assets/video/sim_family_one_controller.jpg" muted loop playsinline preload="none" data-autoplay></video>
+          <figcaption><strong>Three bodies, one controller.</strong> Each body supplies its own transmission map, the matrix that turns motor speeds into body motion.</figcaption>
+        </figure>
+        <figure>
+          <video src="../assets/video/sim_information_compare.mp4" poster="../assets/video/sim_information_compare.jpg" muted loop playsinline preload="none" data-autoplay></video>
+          <figcaption><strong>What the controller is told.</strong> The same body and command, with its own map, with a nominal map, and with a recurrent controller that has no map.</figcaption>
+        </figure>
+      </div>
+
+      <h2 class="center">Learning in simulation</h2>
+      <div class="grid one small">
+        <figure>
+          <video src="../assets/video/sim_webots_rl_tracking.mp4" poster="../assets/video/sim_webots_rl_tracking.jpg" muted loop playsinline preload="none" data-autoplay></video>
+          <figcaption><strong>Learning to follow.</strong> A SAC policy tracking a moving target in Webots.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="manuscripts" class="wrap narrow">
+      <h2>Manuscripts in preparation</h2>
+      <ul class="papers">
+        <li><span class="t">Canonical Transmission Maps for Task-Specialised Morphology Design of Multiwheel Ballbots.</span> D. Si, J. Hedley, H. Wu.</li>
+        <li><span class="t">Shared Actuators Need Not Share Coordinates: Role-Factorized Allocation on a Mecanum Ballbot.</span> D. Si, J. Hedley.</li>
+        <li><span class="t">When Full-Rank Geometry Is Not Enough: Body-Local Response Commissioning Across Ballbot Morphologies.</span> D. Si, J. Hedley.</li>
+        <li><span class="t">Goal Representation and Hindsight Replay for Webots Ballbot Control: A Controlled Factorial Study.</span> D. Si, J. Hedley.</li>
+        <li><span class="t">Doing Nothing Scores Well: A Paired Zero-Action Protocol for Auditing Finite-Horizon Robot Control Benchmarks.</span> D. Si.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <p><a href="../">← Diwen Si</a></p>
+  </footer>
+  <script src="../assets/autoplay.js"></script>
+</body>
+</html>

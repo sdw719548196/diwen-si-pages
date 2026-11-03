@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Diwen Si, PhD researcher in robotics at Newcastle University: ballbot design, hardware prototyping, and one control design for a family of robot bodies.">
+  <title>Diwen Si | Robotics</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Diwen Si | Robotics">
+  <meta property="og:description" content="PhD researcher at Newcastle University: five ballbot builds, hardware tests, and controllers learned in simulation.">
+  <meta property="og:image" content="https://sdw719548196.github.io/diwen-si-pages/assets/og-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://sdw719548196.github.io/diwen-si-pages/">
+  <link rel="canonical" href="https://sdw719548196.github.io/diwen-si-pages/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="intro">
+      <div class="intro-text">
+        <h1>Diwen Si</h1>
+        <p class="tagline">I design robots from the kinematics up, build and test them on hardware, and learn controllers for them in simulation.</p>
+        <p>I am a final-year PhD researcher in Mechanical Engineering at <a href="https://www.ncl.ac.uk/engineering/">Newcastle University</a>, supervised by Dr John Hedley and Dr Dehong Huo. Five builds led to MK5, a compact, self-stabilising ballbot with three Mecanum wheels.</p>
+        <p>My thesis, <em>A Generalised Kinematic Framework for Ballbot Design: Optimisation, Prototyping and Learning-Based Control</em>, asks what a family of similar robots must provide to share one control design. The answer, in simulation, is a short one: each body supplies its transmission map, the matrix that turns motor speeds into body motion, computed from its design angles. I submit the thesis in November 2026, with the viva expected in January 2027.</p>
+        <p class="buttons">
+          <a class="btn primary" href="assets/Diwen_Si_CV.pdf">CV (PDF)</a>
+          <a class="btn" href="mailto:d.si2@ncl.ac.uk">Email</a>
+          <a class="btn" href="ballbot/">Ballbot project</a>
+          <a class="btn" href="https://www.linkedin.com/in/diwen-si-944358220/" rel="me">LinkedIn</a>
+          <a class="btn" href="https://github.com/sdw719548196" rel="me">GitHub</a>
+        </p>
+      </div>
+      <figure class="intro-photo">
+        <img src="assets/ballbot-oblique.jpg" alt="The MK5 ballbot: three Mecanum drive units on a pink ball, with motors, IMU and electronics">
+      </figure>
+    </header>
+
+    <section class="block builds" aria-labelledby="builds-title">
+      <h2 id="builds-title">Five builds</h2>
+      <div class="line-scroll">
+        <ol class="washing-line">
+          <li class="string" aria-hidden="true"><svg viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,10 Q500,110 1000,10"/></svg></li>
+          <li tabindex="0" style="--t:8.0%; --y:19.8px; --i:0"><figure><img src="assets/img/mk1.jpg" alt="MK1, a miniaturisation prototype built around a size 7 basketball" loading="lazy"><figcaption><b>MK1</b><span>Built around a size 7 basketball; set the size bound.</span></figcaption></figure></li>
+          <li tabindex="0" style="--t:27.0%; --y:39.5px; --i:1"><figure><img src="assets/img/mk2.jpg" alt="MK2, the first optimised Mecanum prototype" loading="lazy"><figcaption><b>MK2</b><span>First optimised Mecanum prototype.</span></figcaption></figure></li>
+          <li tabindex="0" style="--t:46.0%; --y:47.7px; --i:2"><figure><img src="assets/img/mk3.jpg" alt="MK3, with frame and ball printed in PETG" loading="lazy"><figcaption><b>MK3</b><span>Frame and ball printed in PETG.</span></figcaption></figure></li>
+          <li tabindex="0" style="--t:64.5%; --y:44.6px; --i:3"><figure><img src="assets/img/mk4.jpg" alt="MK4 with its first data acquisition and wireless communication" loading="lazy"><figcaption><b>MK4</b><span>First data acquisition and wireless communication.</span></figcaption></figure></li>
+          <li class="final" tabindex="0" style="--t:85.5%; --y:27.8px; --i:4"><figure><img src="assets/img/mk5_close.jpg" alt="MK5, the final prototype, on carpet" loading="lazy"><figcaption><b>MK5</b><span>One-piece PLA and TPU ball; the platform for the experiments.</span></figcaption></figure></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Research</h2>
+      <p>I work on robot morphology and control together: how the geometry of a robot decides what it can do, how to build it so that the hardware matches the model, and how one controller can serve many related bodies. My tools are symbolic kinematics, mechanical design and fabrication, synchronized sensing on the robot, and learning-based control in Webots and MuJoCo.</p>
+    </section>
+
+    <section class="block">
+      <h2>Projects</h2>
+
+      <article class="item featured">
+        <div class="media"><a href="ballbot/"><video src="assets/thumb/pair.mp4" poster="assets/thumb/pair.jpg" muted loop playsinline preload="none" data-autoplay></video></a></div>
+        <div class="text">
+          <h3><a href="ballbot/">A Generalised Kinematic Framework for Ballbot Design: Optimisation, Prototyping and Learning-Based Control</a></h3>
+          <p class="meta">PhD thesis, Newcastle University · in preparation</p>
+          <p>From a generalised kinematic model, through five builds to the MK5 prototype, to one analytic controller for a family of 672 simulated bodies.</p>
+          <p class="more"><a href="ballbot/">project page</a> / <a href="#videos">videos</a></p>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="media"><video src="assets/thumb/library.mp4" poster="assets/thumb/library.jpg" muted loop playsinline preload="none" data-autoplay></video></div>
+        <div class="text">
+          <h3>Canonical Transmission Maps for Task-Specialised Morphology Design of Multiwheel Ballbots</h3>
+          <p class="meta"><strong>D. Si</strong>, J. Hedley, H. Wu · in preparation for <em>Mechanism and Machine Theory</em></p>
+          <p>A symbolic kinematic model for any wheel count, position and roller angle: how motor speed and torque reach the ball, balanced and task-specific layouts within motor limits, and which installation errors matter most.</p>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="media"><video src="assets/thumb/mk5.mp4" poster="assets/thumb/mk5.jpg" muted loop playsinline preload="none" data-autoplay></video></div>
+        <div class="text">
+          <h3>Shared Actuators Need Not Share Coordinates: Role-Factorized Allocation on a Mecanum Ballbot</h3>
+          <p class="meta"><strong>D. Si</strong>, J. Hedley · in preparation for <em>IEEE/ASME Transactions on Mechatronics</em></p>
+          <p>On the MK5 prototype, a separate tilt-correction map returned the robot upright in 18 of 18 matched trials, against 3 of 18 for a shared map.</p>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="media"><video src="assets/thumb/family.mp4" poster="assets/thumb/family.jpg" muted loop playsinline preload="none" data-autoplay></video></div>
+        <div class="text">
+          <h3>When Full-Rank Geometry Is Not Enough: Body-Local Response Commissioning Across Ballbot Morphologies</h3>
+          <p class="meta"><strong>D. Si</strong>, J. Hedley · manuscript in preparation</p>
+          <p>On a family of 672 simulated bodies, one analytic controller closed 69% of the gap between doing nothing and perfect tracking on 224 evaluation bodies when each body supplied its transmission map, against 18% with a nominal map.</p>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="media"><video src="assets/thumb/webots_rl.mp4" poster="assets/thumb/webots_rl.jpg" muted loop playsinline preload="none" data-autoplay></video></div>
+        <div class="text">
+          <h3>Goal Representation and Hindsight Replay for Webots Ballbot Control: A Controlled Factorial Study</h3>
+          <p class="meta"><strong>D. Si</strong>, J. Hedley · in preparation for <em>Robotics and Autonomous Systems</em></p>
+          <p>A controlled comparison of how the goal is given to the policy and of hindsight experience replay, for learned ballbot controllers in Webots.</p>
+        </div>
+      </article>
+
+      <article class="item">
+        <div class="media"><video src="assets/thumb/information.mp4" poster="assets/thumb/information.jpg" muted loop playsinline preload="none" data-autoplay></video></div>
+        <div class="text">
+          <h3>Doing Nothing Scores Well: A Paired Zero-Action Protocol for Auditing Finite-Horizon Robot Control Benchmarks</h3>
+          <p class="meta"><strong>D. Si</strong> · manuscript in preparation</p>
+          <p>Scores on finite-horizon control benchmarks are reported against a matched zero-action run, so that a controller is credited only for what it adds.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="videos" class="block">
+      <h2>Videos</h2>
+      <figure class="wide">
+        <video src="assets/video/sim_real_pair.mp4" poster="assets/video/sim_real_pair.jpg" muted loop playsinline preload="none" data-autoplay></video>
+        <figcaption>The MK5 prototype on carpet, beside a body from its simulated family in MuJoCo.</figcaption>
+      </figure>
+      <div class="video-grid">
+        <figure>
+          <video src="assets/video/sim_webots_wheel_benchmark.mp4" poster="assets/video/sim_webots_wheel_benchmark.jpg" muted loop playsinline preload="none" data-autoplay></video>
+          <figcaption><strong>Choosing the wheel.</strong> Mecanum against three omniwheel constructions in Webots.</figcaption>
+        </figure>
+        <figure>
+          <video src="assets/video/sim_information_compare.mp4" poster="assets/video/sim_information_compare.jpg" muted loop playsinline preload="none" data-autoplay></video>
+          <figcaption><strong>What the controller is told.</strong> One body with its own map, a nominal map, and no map.</figcaption>
+        </figure>
+      </div>
+      <p class="more center"><a href="ballbot/">All videos on the ballbot project page →</a></p>
+    </section>
+
+    <section class="block">
+      <h2>Teaching</h2>
+      <p>Graduate Teaching Assistant at Newcastle University for MEC3027 Instrumentation and Drives, MEC3033 Introduction to Mechatronics Design, MEC8057 Mechatronics and Mobile Robots, and Applied AI and Robotics, at undergraduate and postgraduate levels. I guide students through Python and MATLAB control and sensing, Webots simulation, CAD, embedded platforms and laboratory debugging. Associate Fellow of Advance HE (AFHEA).</p>
+    </section>
+  </main>
+
+  <footer class="foot">Diwen Si · Newcastle University · 2026</footer>
+  <script src="assets/autoplay.js"></script>
+</body>
+</html>
